@@ -18,32 +18,45 @@ for physical statements.
 
 Let
 \[
-\Pi : \mathcal{U} \rightarrow m
+\Pi_C : \mathcal{U}_C \rightarrow m_C
 \]
-be a projection.
+be a projection defined relative to an explicit relational context $C$.
+The context includes the applicable TRD coupling, reference structure,
+and projection conditions.
 
-Then $m_2$ is defined as:
+Then the corresponding validity domain is defined as:
 \[
-m_2 := \{\, u \in \mathcal{U} \mid \Pi \text{ is injective at } u \,\}
+m_2(C) := \{\, u \in \mathcal{U}_C \mid \Pi_C \text{ is injective at } u \,\}
 \]
 
 Equivalently:
 \[
-u \in m_2
+u \in m_2(C)
 \;\Longleftrightarrow\;
-\exists!\, \Pi^{-1}(\Pi(u))
+\exists!\, \Pi_C^{-1}(\Pi_C(u))
 \]
 
 Only within $m_2$
 does a projected statement
 possess a unique relational origin.
 
+\subsection{Context-relative uniqueness}
+
+Uniqueness is evaluated only after the context $C$ has been fixed.
+Different explicit TRD couplings or projection contexts may yield
+different values without contradiction.
+
+A contradiction occurs only if distinct values are attributed to
+the same relational state under the same context $C$ and projection $\Pi_C$.
+If the available description does not determine which context applies,
+the statement is underdetermined and therefore not admissible in $m_2(C)$.
+
 \subsection{Physical admissibility}
 
 A physical statement is admissible
 if and only if
 all relational quantities involved
-are evaluated within $m_2$.
+are evaluated within one explicitly fixed $m_2(C)$.
 
 Outside $m_2$,
 formal computation remains possible,

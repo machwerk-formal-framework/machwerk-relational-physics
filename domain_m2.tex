@@ -14,34 +14,40 @@ for physically interpretable statements.
 
 \subsection{Formal definition}
 
-Let
+For an explicit relational context $C$, let
 \[
-\Pi : \mathcal{U} \rightarrow \mathcal{M}
+\Pi_C : \mathcal{U}_C \rightarrow \mathcal{M}_C
 \]
-be a projection.
+be the corresponding projection. The context includes the applicable
+TRD coupling, reference structure, and projection conditions.
 
 Then
 \[
-m_2 := \{ u \in \mathcal{U} \mid \Pi \text{ is injective on } u \}
+m_2(C) := \{ u \in \mathcal{U}_C \mid \Pi_C \text{ is injective on } u \}
 \]
 
 Equivalently:
 \[
-u \in m_2
+u \in m_2(C)
 \;\Longleftrightarrow\;
-\exists!\,\Pi^{-1}(\Pi(u))
+\exists!\,\Pi_C^{-1}(\Pi_C(u))
 \]
+
+Injectivity and uniqueness are always evaluated relative to this fixed context.
+Different explicit contexts may yield different values without contradiction.
+If the context is underdetermined, no unique physical back-reference exists
+and the statement is outside $m_2(C)$.
 
 \subsection{Properties}
 
-Within $m_2$:
+Within $m_2(C)$:
 \begin{itemize}
     \item physical quantities are well-defined,
     \item causal reconstruction is possible,
     \item comparisons between states are unambiguous.
 \end{itemize}
 
-Outside $m_2$,
+Outside $m_2(C)$,
 formal computation may continue,
 but physical interpretation is no longer unique.
 

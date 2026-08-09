@@ -8,7 +8,9 @@ all involved quantities
 \begin{enumerate}
     \item are defined within the same relational validity domain,
     \item are subject to the same projection boundary,
-    \item are combined without implicit category transitions.
+    \item are combined without implicit category transitions,
+    \item are evaluated under one explicitly identified relational context
+    and TRD coupling.
 \end{enumerate}
 
 Let
@@ -21,10 +23,11 @@ A statement
 \[
 S(\mathcal{R})
 \]
-is admissible if and only if there exists a single validity domain \( m_2 \)
+is admissible if and only if there exists a single context-relative
+validity domain \( m_2(C) \)
 such that
 \[
-\forall r_i \in \mathcal{R}, \quad r_i \in m_2.
+\forall r_i \in \mathcal{R}, \quad r_i \in m_2(C).
 \]
 
 If no such domain exists, the statement is formally writable
@@ -32,6 +35,11 @@ but physically non-admissible.
 
 Violation of the CRA axiom does not invalidate the mathematics.
 It invalidates the physical interpretation.
+
+Different explicit contexts may produce different values without contradiction.
+If the applicable context cannot be uniquely determined, the attribution is
+underdetermined and not admissible in $m_2(C)$. A contradiction arises only
+when incompatible values are asserted inside one fixed context.
 
 The CRA axiom therefore separates
 formal computability
