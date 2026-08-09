@@ -1,6 +1,74 @@
 # MACHWERK — Formal Core
 
-**DOI (archival reference):** https://doi.org/10.5281/zenodo.18478523
+**A formal framework for deciding when a statement about an observed system can be reconstructed from the relations that produced it.**
+
+[Worked example](formal_core/examples/00_minimal_admissibility_test.md) ·
+[Formal definitions](#formal-core) ·
+[Applications](applications/) ·
+[Archival reference](https://doi.org/10.5281/zenodo.18478523)
+
+MACHWERK separates questions that are often treated as one:
+
+1. Is an expression mathematically well-defined?
+2. Is the relational context uniquely specified?
+3. Is its interpretation uniquely supported by the observable projection in that context?
+
+The framework calls a statement physically admissible only relative to an explicit relational context, TRD coupling, and projection. Different contexts may produce different values without contradiction. A contradiction arises only when incompatible values are attributed to the same supposedly unique context.
+
+> **Core criterion**
+>
+> For a fixed context $C$, let $\Pi_C : \mathcal U_C \to M_C$ be its projection and $S_C$ a statement evaluated in that context. Physical admissibility requires
+> $$
+> C\text{ is explicit},\qquad
+> u\in m_2(C),\qquad
+> \exists!\,\Pi_C^{-1}(\Pi_C(u)).
+> $$
+>
+> If the context or inverse origin is not unique, the expression may remain formally computable, but its physical attribution is not admissible.
+
+## Quick Start: One Complete Test
+
+Let one TRD context be
+
+$$
+C_A=(R_1,R_2,R_3),
+\qquad
+S_A=S(X_{12},X_{23},X_{31})=1.
+$$
+
+Let a differently coupled context be
+
+$$
+C_B=(R'_1,R'_2,R'_3),
+\qquad
+S_B=S(X'_{12},X'_{23},X'_{31})=2.
+$$
+
+There is no contradiction: $S_A$ and $S_B$ belong to different explicit contexts. A contradiction would arise only if one erased that distinction and asserted
+
+$$
+C\mapsto 1
+\qquad\text{and}\qquad
+C\mapsto 2
+$$
+
+for one and the same context $C$. If the available projection cannot determine whether $C_A$ or $C_B$ applies, the result is underdetermined and therefore not in $m_2$.
+
+The [worked example](formal_core/examples/00_minimal_admissibility_test.md) expands this distinction and locates ambiguity, contradiction, $m_2$, $m_3$, and $\Delta_0$.
+
+## What This Repository Lets You Test
+
+Given a relational space, a projection, and a proposed statement, you can test:
+
+- whether the statement factors through the projection;
+- whether the TRD coupling and relational context are explicit;
+- whether reconstruction is unique in the stated validity domain;
+- where injectivity is lost;
+- whether an expression remains in the interpretable domain $m_2$;
+- whether it is only formally writable in $m_3$;
+- whether a non-reconstructible claim must be marked by $\Delta_0$.
+
+This is symbolic admissibility analysis, not numerical simulation or empirical prediction.
 
 ## What This Is
 
@@ -14,12 +82,9 @@ A **domain-agnostic formal framework** for:
 
 ---
 
-## Critical: Context Emerges With The Book
+## Context Supplied by the Book
 
-**Without the book**, this repository is:
-✅ Mathematically working  
-✅ Computationally testable  
-❌ Contextually incomplete  
+The repository is self-contained enough to inspect the formal criteria and run symbolic admissibility tests. The book supplies the motivation, extended derivations, and physical context.
 
 The 80-page introduction in the book explains:
 - Why m₃ relates to Shape Sphere 
@@ -27,17 +92,8 @@ The 80-page introduction in the book explains:
 - How the Schwarzgrenze filters between emergent and measured physics
 - Why 𝒰 is the absolute origin (no degrees of freedom, no time, no metric)
 
-**Without the book, you won't know WHAT you're computing. But you CAN compute.**
+The framework is domain-agnostic. A relational system may come from:
 
----
-
-## What You Can Do Right Now
-
-### ✅ Test Questions From The Book
-Bring questions from MACHWERK (the book) and use the formal core to verify if they satisfy the framework's admissibility conditions.
-
-### ✅ Experiment With Your Own Relational Systems
-The framework is **domain-agnostic**. You can:
 - Replace physics with chemistry
 - Replace physics with biology  
 - Replace physics with economics
@@ -48,12 +104,7 @@ The framework is **domain-agnostic**. You can:
 2. Projections (Π) — emergent structure
 3. Injectivity conditions — where reconstruction is possible
 
-### ✅ Compute Admissibility
-For ANY question: Does it collapse to non-reconstructible (Δ₀)? Is it grounded in m₂? Or is it only formally computable in m₃?
-
----
-
-## Structure
+## Formal Core
 
 The formal core is organized bottom-up:
 
@@ -87,14 +138,6 @@ No file assumes definitions that appear later.
 For axiomatized forms, see `/axioms/`
 
 For formal test applications, see `/applications/`
-
----
-
-## Core Rule
-
-If a statement **cannot be uniquely inverted through the projection**, it is **not admissible**, even if mathematically well-defined.
-
-This is a structural rule. It does not depend on physics.
 
 ---
 
@@ -136,7 +179,7 @@ This repository contains **formal scaffolding only**.
 
 1. **All `.tex` files contain MATHEMATICS, not code**
 2. **Set notation (∈, ⊆, etc.) is AXIOMATICALLY defined, not computational**
-3. **NO numerical computation** happens in this repo — all is formal structure
+3. **No numerical simulation** happens in this repo — computation means symbolic admissibility testing
 4. **This framework is domain-agnostic** — physics is ONE application, not the foundation
 5. **The framework works WITHOUT physics context** — but you won't know why
 6. **Δ₀ is a parking lot, not an operational element** — things don't "compute into" it

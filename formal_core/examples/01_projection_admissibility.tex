@@ -13,9 +13,10 @@ denote the relational reference space.
 
 Let
 \[
-\Pi : \mathcal{U} \rightarrow m_2
+\Pi_C : \mathcal{U}_C \rightarrow m_2(C)
 \]
-be a projection into an observable calculation domain.
+be a projection into an observable calculation domain under an explicit
+relational context $C$, including its TRD coupling.
 
 Consider a relational expression
 \[
@@ -26,24 +27,32 @@ u \in \mathcal{U}.
 
 \subsection{Admissibility Condition}
 
-A statement is physically admissible if and only if
-its value depends exclusively on the projected state.
+A statement is projection-compatible only if its value depends exclusively
+on the projected state within the fixed context $C$.
 
-Formally, admissibility requires:
+Formally, projection compatibility requires:
 \[
 \forall u_1,u_2 \in \mathcal{U} :
-\Pi(u_1) = \Pi(u_2)
+\Pi_C(u_1) = \Pi_C(u_2)
 \;\Rightarrow\;
 S(u_1) = S(u_2).
 \]
 
+Physical admissibility additionally requires
+\[
+u_1,u_2 \in m_2(C),
+\]
+so that the projected relational origin is uniquely reconstructible
+under the same context and projection.
+
 \subsection{Interpretation}
 
-This condition ensures that the statement does not distinguish
+The compatibility condition ensures that the statement does not distinguish
 between relational states that are observationally identical.
 
-Any dependence on unobservable relational degrees of freedom
-renders the statement physically inadmissible.
+It is necessary but not sufficient for physical admissibility:
+CRA also requires a single explicit validity domain and context,
+while $m_2(C)$ requires unique back-reconstruction.
 
 \subsection{Boundary Case}
 
@@ -51,7 +60,7 @@ If there exist
 \[
 u_1 \neq u_2
 \quad\text{such that}\quad
-\Pi(u_1) = \Pi(u_2)
+\Pi_C(u_1) = \Pi_C(u_2)
 \quad\text{and}\quad
 S(u_1) \neq S(u_2),
 \]
@@ -62,9 +71,11 @@ but loses physical interpretability.
 
 \subsection{Result}
 
-Projection admissibility is a structural criterion.
+Projection compatibility and physical admissibility are distinct
+structural criteria.
 
 It does not restrict formal mathematics.
 It restricts physical interpretation.
 
-This rule applies universally, independent of model, scale, or domain.
+Different explicit contexts may yield different statement values without
+contradiction. Ambiguous or mixed contexts are not physically admissible.
