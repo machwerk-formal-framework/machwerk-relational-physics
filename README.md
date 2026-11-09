@@ -6,8 +6,7 @@
 [Formal definitions](#formal-core) ·
 [Applications](applications/) ·
 [Archival reference](https://doi.org/10.5281/zenodo.18478523)
-
-MACHWERK separates questions that are often treated as one:
+Related work. The Hoyle Resonance and Bound Carbon-12 is an exploratory working paper from Raum ohne Zeit. It compares simplified nuclear models with published measurements and examines what an independent test of the Eigenraum hypothesis would require. The paper is available in English and German.MACHWERK separates questions that are often treated as one:
 
 1. Is an expression mathematically well-defined?
 2. Is the relational context uniquely specified?
